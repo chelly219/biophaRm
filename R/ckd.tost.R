@@ -13,9 +13,9 @@
 #' ci Confidence interval
 #' paired default is FALSE
 
-############################################################
+#############################################################
 # Equivalence Test (TOST)
-############################################################
+#############################################################
 
 
 ckd.tost <- function(filename, sheet.no=1, raw.data, test.name, ref.name, method.name, ci=0.90, paired = FALSE, sample.n.show=TRUE){
@@ -40,9 +40,9 @@ ckd.tost <- function(filename, sheet.no=1, raw.data, test.name, ref.name, method
     print("non-equivalence")
   }
 
-  ############################################################
+  #############################################################
   # Graph for CKD.TOST Result
-  ############################################################
+  #############################################################
   conf.value <- as.numeric(attributes(result$tost.interval)$conf.level)*100
   d<-data.frame(Name=test.name, mean=c(0), lower=result$tost.interval[1], upper=result$tost.interval[2])
 
