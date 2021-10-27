@@ -1,1 +1,12 @@
+# Rstudio User
+.Rproj.user/
+*.Rproj
+
+# Session Data files
+.RData
+
+
 .Rproj.user
+.Rhistory
+.RData
+.Ruserdata
