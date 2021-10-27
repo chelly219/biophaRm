@@ -1,10 +1,15 @@
-#' A CKD Quality Range Function
-
+#' Data Visualization
+#'@param input excel file path
+#'@keywords box plot
+#'@export
+#'@examples x axis is categorical, y axis is numeric box plot
+#'
+#'
 ############################################################
 # Quality Range geom_boxplot or violin plot
 ############################################################
 
-bioplot.box <- function(filename="", start, end, ref.name=""){
+bio.boxplot <- function(filename="", start, end, ref.name=""){
 
   library(extrafont); library(ggplot2); library(readxl); library(data.table)
 

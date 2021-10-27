@@ -1,9 +1,14 @@
-#' A CKD Quality Range Function
+#' Data Visualization
+#'@param input excel file path
+#'@keywords jitter plot
+#'@export
+#'@examples x axis is categorical, y axis is numeric box plot
+#'
 ############################################################
 # Quality Range - geom_jitter or geom_point
 ############################################################
 
-bioplot.jitter <- function(filename="", start=2, end=3, ref.name=""){
+bio.jitterplot <- function(filename="", start=2, end=3, ref.name=""){
 
   library(extrafont); library(ggplot2); library(readxl); library(data.table)
 

@@ -1,12 +1,11 @@
 #' TOST Function
 #'
 #' This function allows Equivalence test.
-#' @param two The equivalence test for biosimilar and reference product.
+#' @param The equivalence test for biosimilar and reference product.
 #' @keywords biosimilar TOST
 #' @export
 #' @examples
 #' biotest.tost(test.name="Biosimilar", ref.name="Reference", method.name="WAX-HPLC", ci=0.95, paired = FALSE )
-#'
 #' test.name Write a test sample name.
 #' ref.name Write a reference sample name.
 #' method.name Write a test method name for title
@@ -18,7 +17,7 @@
 ############################################################
 
 
-biotest.tost <- function(filename, sheet.no=1, raw.data, test.name, ref.name, method.name,
+bio.tost <- function(filename, sheet.no=1, raw.data, test.name, ref.name, method.name,
                          ci=0.90, paired = FALSE, sample.n.show=TRUE)
   {
   library(equivalence);library(ggplot2); library(readxl)
