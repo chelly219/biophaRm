@@ -1,12 +1,12 @@
 #install required packages
-install.packages(c("ggplot2", "readxl", "data.table", "extrafont", "devtools", "equivalence"))
+# install.packages(c("ggplot2", "readxl", "data.table", "extrafont", "devtools", "equivalence"))
 
 #loading installed packages
 library(extrafont); library(ggplot2); library(readxl); library(data.table)
 library("BiophaRm")
 
 #set a working directory
-setwd("D:\\BiosimilaR example\\")
+# setwd("D:\\BiosimilaR example\\")
 
 
 bioplot.jitter(filename="tier2 example data.xlsx",   #load excel data
