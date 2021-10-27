@@ -1,16 +1,18 @@
 Package: biophaRm
 Title: Statistics Functions for biopharmaceutical
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: 
     person(given = "Lee",
-           family = "Chelly",
+           family = "Chanmi",
            role = c("aut", "cre"),
            email = "chelly219@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: this package support equivalence test, confidence interval, plots according to FDA guide and statistic reviewe package does.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+Imports: ggplot2 (>= 3.3.5), extrafont (>= 0.71), data.table (>= 1.14.2), readxl (>= 1.3.1)
+License: use_mit_license()
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Repository: github (https://github.com/chelly219/biophaRm/)
+

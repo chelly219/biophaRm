@@ -9,9 +9,7 @@
 # Quality Range geom_boxplot or violin plot
 ############################################################
 
-bio.boxplot <- function(filename="", start, end, ref.name=""){
-
-  library(extrafont); library(ggplot2); library(readxl); library(data.table)
+bio.boxplot <- function(filename="", start=1, end=1, ref.name=""){
 
   for(i in start:end){
 
