@@ -3,8 +3,3 @@
 export(bio.boxplot)
 export(bio.jitterplot)
 export(bio.tost)
-import(ggplot2)
-import(extrafont)
-import(readxl)
-import(ggplot2)
-import(data.table)
