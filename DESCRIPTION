@@ -8,7 +8,11 @@ Authors@R:
            email = "chelly219@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: this package support equivalence test, confidence interval, plots according to FDA guide and statistic reviewe package does.
+<<<<<<< HEAD
 Imports: ggplot2, extrafont, data.table, readxl
+=======
+Imports: ggplot2 (>= 3.3.5), extrafont, data.table, readxl
+>>>>>>> 42da2aa32964d8c382d2c398866618d08474cf2d
 License: use_mit_license()
 Encoding: UTF-8
 LazyData: true
