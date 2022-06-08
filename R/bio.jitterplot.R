@@ -8,9 +8,9 @@
 # Quality Range - geom_jitter or geom_point
 ############################################################
 
-bio.jitterplot <- function(filename="", start=2, end=3, ref.name=""){
+bio.jitterplot <- function(filename, start, end, ref.name){
 
-  library(extrafont); library(ggplot2); library(readxl); library(data.table)
+  library(ggplot2); library(readxl); library(data.table)
 
   for(i in start:end){
 
@@ -40,10 +40,10 @@ bio.jitterplot <- function(filename="", start=2, end=3, ref.name=""){
       # geom_hline(yintercept=ymean+3*ysd, linetype="dashed", color = "red")+
       geom_hline(yintercept=y_up, linetype="dashed", color = "red")+
       geom_text( mapping=aes(x=0.5, y=y_up, label="Mean+3SD"),
-                 size=3, angle=0, vjust=-0.4, hjust=0, color="red" ,family="Times New Roman") +
+                 size=3, angle=0, vjust=-0.4, hjust=0, color="red") +
       geom_hline(yintercept=y_low, linetype="dashed", color = "red")+
       geom_text( mapping=aes(x=0.5, y=y_low, label="Mean-3SD"),
-                 size=3, angle=0, vjust=1.2, hjust=0, color="red", family="Times New Roman") +
+                 size=3, angle=0, vjust=1.2, hjust=0, color="red") +
 
       #Legend Show==FALSE
       scale_color_manual(values=c('blue3', 'red'), guide=F)+
@@ -55,7 +55,7 @@ bio.jitterplot <- function(filename="", start=2, end=3, ref.name=""){
       ylab(y.axis)+
       ggtitle(test.name)+
       theme_bw()+
-      theme(text=element_text(family="Times New Roman", size=16, face="bold"),
+      theme(text=element_text(size=16, face="bold"),
             panel.grid.major.x = element_blank(),
             panel.grid.major = element_line(size=0.3),
             panel.grid.minor = element_line(size=0.3),
