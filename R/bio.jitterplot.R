@@ -8,7 +8,7 @@
 # Quality Range - geom_jitter or geom_point
 ############################################################
 
-bio.jitterplot <- function(filename, start, end, ref.name){
+bio.jitterplot <- function(filename, start, end, ref.name, three.sd){
 
   library(ggplot2); library(readxl); library(data.table)
 
@@ -35,20 +35,25 @@ bio.jitterplot <- function(filename, start, end, ref.name){
     ysd<-sd(subset(raw.data, Sample==ref.name & raw.data$value!="NA")$value)
     set.seed(1)
 
+    Type.no<-length(unique(raw.data$Type))
+    ifelse(Type.no>2,shapes<-sample(21:25, Type.no), shapes<-c(19,21))
+
+    ifelse(three.sd==TRUE, y_up<-(ymean+3*ysd))
+    ifelse(three.sd==TRUE, y_low<-(ymean-3*ysd))
+
     ggplot(raw.data, aes(x=Sample, y=value))+
       geom_jitter(width=0.2, aes(color=Sample, shape=Type),size=3)+
       # geom_hline(yintercept=ymean-3*ysd, linetype="dashed", color = "red")+
       # geom_hline(yintercept=ymean+3*ysd, linetype="dashed", color = "red")+
       geom_hline(yintercept=y_up, linetype="dashed", color = "red")+
-      geom_text( mapping=aes(x=0.5, y=y_up, label="Mean+3SD"),
+      geom_text( mapping=aes(x=0.5, y=y_up, label="Upper Limit"),
                  size=3, angle=0, vjust=-0.4, hjust=0, color="red") +
       geom_hline(yintercept=y_low, linetype="dashed", color = "red")+
-      geom_text( mapping=aes(x=0.5, y=y_low, label="Mean-3SD"),
+      geom_text( mapping=aes(x=0.5, y=y_low, label="Lower Limit"),
                  size=3, angle=0, vjust=1.2, hjust=0, color="red") +
 
       scale_color_manual(values=c('blue3', 'red'), guide="none")+
-      scale_shape_manual(values = c(21,21), guide="none")+
-
+      scale_shape_manual(values = shapes)+
       scale_y_continuous(limits= c(ymin,ymax), labels=function(x) sprintf(paste0("%.",y_decimal,"f"), x))+
       xlab("") +
       ylab(y.axis)+
